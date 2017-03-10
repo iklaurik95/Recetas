@@ -1,4 +1,6 @@
 import java.awt.BorderLayout;
+
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -72,35 +74,35 @@ public class Receta extends JFrame {
 		
 		JButton botonComprobar = new JButton("Comprobar");
 		botonComprobar.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
-				if(radioTortillaConCebolla.isSelected()){
-				   checkPatata.setSelected(true);
-				   checkCebolla.setSelected(true);
-				   checkHuevos.setSelected(true);
-				   checkJamon.setSelected(false);
-				   checkChorizo.setSelected(false);
-				   checkPimiento.setSelected(false);
-				   checkPimienta.setSelected(false);
-				   checkLechuga.setSelected(false);
-				   
+				
+				if(radioTortillaConCebolla.isSelected()){									
+				    if(checkPatata.isSelected() && checkHuevos.isSelected() && checkCebolla.isSelected() && !checkPimiento.isSelected()
+					&& !checkLechuga.isSelected() && !checkChorizo.isSelected() && !checkPimienta.isSelected() && !checkJamon.isSelected()){
+						botonComprobar.setBackground(Color.BLUE);
+						}
+						else{
+						botonComprobar.setBackground(Color.ORANGE);	
+						}
+					
 				}else if(radioTortillaSinCebolla.isSelected()){
-					checkPatata.setSelected(true);
-					checkCebolla.setSelected(false);
-					checkHuevos.setSelected(true);
-					checkJamon.setSelected(false);
-					checkChorizo.setSelected(false);
-					checkPimiento.setSelected(false);
-					checkPimienta.setSelected(false);
-					checkLechuga.setSelected(false);
+					if(checkPatata.isSelected() && checkHuevos.isSelected() && !checkCebolla.isSelected() && !checkPimiento.isSelected()
+					&& !checkLechuga.isSelected() && !checkChorizo.isSelected() && !checkPimienta.isSelected() && !checkJamon.isSelected()){
+						botonComprobar.setBackground(Color.BLUE);
+						}
+						else{
+						botonComprobar.setBackground(Color.ORANGE);	
+						}
+					
 				}else if(radioTortillaFrancesaCon.isSelected()){
-					checkPatata.setSelected(false);
-					checkCebolla.setSelected(false);
-					checkHuevos.setSelected(true);
-					checkJamon.setSelected(true);
-					checkChorizo.setSelected(false);
-					checkPimiento.setSelected(false);
-					checkPimienta.setSelected(false);
-					checkLechuga.setSelected(false);
+					if(!checkPatata.isSelected() && checkHuevos.isSelected() && !checkCebolla.isSelected() && !checkPimiento.isSelected()
+					&& !checkLechuga.isSelected() && !checkChorizo.isSelected() && !checkPimienta.isSelected() && checkJamon.isSelected()){
+						botonComprobar.setBackground(Color.BLUE);
+						}
+						else{
+						botonComprobar.setBackground(Color.ORANGE);	
+						}
 				}
 				
 			}
