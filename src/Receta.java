@@ -48,13 +48,29 @@ public class Receta extends JFrame {
 		setContentPane(contentPane);
 		
 		JRadioButton radioTortillaConCebolla = new JRadioButton("Tortilla con cebolla");
+		radioTortillaConCebolla.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			//	resetearFormulario(radioTortillaConCebolla);
+			}	
+		});
 		buttonGroup.add(radioTortillaConCebolla);
 		
 		JRadioButton radioTortillaSinCebolla = new JRadioButton("Tortilla sin cebolla");
+		radioTortillaSinCebolla.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			//	resetearFormulario(radioTortillaSinCebolla);
+			}
+		});
 		buttonGroup.add(radioTortillaSinCebolla);
 		
 		JRadioButton radioTortillaFrancesaCon = new JRadioButton("Tortilla francesa con jam\u00F3n");
+		radioTortillaFrancesaCon.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			//	resetearFormulario(radioTortillaFrancesaCon);
+			}
+		});
 		buttonGroup.add(radioTortillaFrancesaCon);
+				
 		
 		JCheckBox checkPatata = new JCheckBox("Patata");
 		
@@ -74,22 +90,23 @@ public class Receta extends JFrame {
 		
 		JButton botonComprobar = new JButton("Comprobar");
 		botonComprobar.addActionListener(new ActionListener() {
-			
+							
 			public void actionPerformed(ActionEvent e) {
 				
-				if(radioTortillaConCebolla.isSelected()){									
+			if(radioTortillaConCebolla.isSelected()){									
 				    if(checkPatata.isSelected() && checkHuevos.isSelected() && checkCebolla.isSelected() && !checkPimiento.isSelected()
 					&& !checkLechuga.isSelected() && !checkChorizo.isSelected() && !checkPimienta.isSelected() && !checkJamon.isSelected()){
-						botonComprobar.setBackground(Color.BLUE);
+						botonComprobar.setBackground(Color.GREEN);
 						}
 						else{
 						botonComprobar.setBackground(Color.ORANGE);	
+						
 						}
 					
 				}else if(radioTortillaSinCebolla.isSelected()){
 					if(checkPatata.isSelected() && checkHuevos.isSelected() && !checkCebolla.isSelected() && !checkPimiento.isSelected()
 					&& !checkLechuga.isSelected() && !checkChorizo.isSelected() && !checkPimienta.isSelected() && !checkJamon.isSelected()){
-						botonComprobar.setBackground(Color.BLUE);
+						botonComprobar.setBackground(Color.GREEN);
 						}
 						else{
 						botonComprobar.setBackground(Color.ORANGE);	
@@ -98,14 +115,27 @@ public class Receta extends JFrame {
 				}else if(radioTortillaFrancesaCon.isSelected()){
 					if(!checkPatata.isSelected() && checkHuevos.isSelected() && !checkCebolla.isSelected() && !checkPimiento.isSelected()
 					&& !checkLechuga.isSelected() && !checkChorizo.isSelected() && !checkPimienta.isSelected() && checkJamon.isSelected()){
-						botonComprobar.setBackground(Color.BLUE);
+						botonComprobar.setBackground(Color.GREEN);
 						}
 						else{
 						botonComprobar.setBackground(Color.ORANGE);	
 						}
 				}
-				
+			
+		
 			}
+//			protected void resetearFormulario(JRadioButton radioTortillaConCebolla) {
+//				// TODO Auto-generated method stub
+//				checkPatata.setText(null);
+//				checkCebolla.setText(null);
+//				checkHuevos.setText(null);
+//				checkJamon.setText(null);
+//				checkChorizo.setText(null);
+//				checkPimiento.setText(null);
+//				checkPimienta.setText(null);
+//				checkLechuga.setText(null);
+//			}
+//					    	
 		});
 		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
@@ -174,4 +204,6 @@ public class Receta extends JFrame {
 		);
 		contentPane.setLayout(gl_contentPane);
 	}
+
+	
 }
